@@ -1,0 +1,7 @@
+Android APK: NOT BUILT. No Android SDK available in the authoring environment.
+Android installation / LAN pairing / notifications: NOT VERIFIED on a physical device.
+Shared JavaScript merge and calendar tests: PASS.
+Windows LAN model, persistence and regression tests: PASS.
+TLS wire test: SKIPPED because the authoring sandbox rejected loopback connection with Windows socket error 10013.
+Phone UI smoke test: NOT COMPLETED because the local WebView test runtime could not initialize graphics in this environment.
+This source package must not be described as a finished, tested APK.

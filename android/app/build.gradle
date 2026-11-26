@@ -1,0 +1,10 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'com.lingcalendar.app'
+ compileSdk 35
+ defaultConfig { applicationId 'com.lingcalendar.app'; minSdk 26; targetSdk 35; versionCode 1; versionName '1.0-sync' }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+ buildTypes { debug { debuggable true }; release { minifyEnabled false } }
+}
+tasks.register('copyShared', Copy) { from '../../shared'; include '*.js'; into 'src/main/assets' }
+tasks.named('preBuild').configure { dependsOn 'copyShared' }
