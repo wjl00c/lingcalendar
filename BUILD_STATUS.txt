@@ -1,7 +1,8 @@
-Android APK: NOT BUILT. No Android SDK available in the authoring environment.
-Android installation / LAN pairing / notifications: NOT VERIFIED on a physical device.
-Shared JavaScript merge and calendar tests: PASS.
+Android APK: BUILT successfully by GitHub Actions run 45777861573.
+Source commit: f52ea980028f0e591c91611e81107efa4bb5e313.
+APK SHA256: f5570b3a7ac69b008b2ef19de1b8994e9bea2a635472db1b03f78a88dc68892a.
+Phone assets UI verification: PASS in Chromium, run 45781355154.
+Shared JavaScript merge and calendar tests: PASS on local and build machines.
 Windows LAN model, persistence and regression tests: PASS.
-TLS wire test: SKIPPED because the authoring sandbox rejected loopback connection with Windows socket error 10013.
-Phone UI smoke test: NOT COMPLETED because the local WebView test runtime could not initialize graphics in this environment.
-This source package must not be described as a finished, tested APK.
+TLS wire test: SKIPPED; the authoring sandbox rejected loopback connection with Windows socket error 10013.
+Android installation, native notifications and real-device LAN pairing: NOT YET VERIFIED on physical devices.
