@@ -1,0 +1,16 @@
+name: Phone UI verification
+on:
+ workflow_dispatch:
+ push:
+  paths: ['android/app/src/main/assets/**','shared/**','qa/phone_ui.cjs','.github/workflows/phone-ui.yml']
+permissions:
+ contents: read
+jobs:
+ phone-ui:
+  runs-on: ubuntu-latest
+  timeout-minutes: 5
+  steps:
+   - uses: actions/checkout@v4
+   - uses: actions/setup-node@v4
+     with: {node-version: '22'}
+   - run: node qa/phone_ui.cjs
