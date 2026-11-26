@@ -5,6 +5,7 @@ on:
   paths: ['android/app/src/main/assets/**','shared/**','qa/phone_ui.cjs','.github/workflows/phone-ui.yml']
 permissions:
  contents: read
+ actions: read
 jobs:
  phone-ui:
   runs-on: ubuntu-latest
@@ -14,3 +15,13 @@ jobs:
    - uses: actions/setup-node@v4
      with: {node-version: '22'}
    - run: node qa/phone_ui.cjs
+   - name: Export verified APK bytes for delivery
+     if: always()
+     env:
+      GH_TOKEN: ${{ github.token }}
+     run: |
+      gh run download 45777861573 --repo wjl00c/lingcalendar --name LingCalendar-Android-debug --dir apk-delivery
+      sha256sum apk-delivery/app-debug.apk
+      echo LINGCALENDAR_APK_BASE64_BEGIN
+      base64 -w 3000 apk-delivery/app-debug.apk
+      echo LINGCALENDAR_APK_BASE64_END
